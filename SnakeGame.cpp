@@ -73,7 +73,7 @@ void SnakeGame::draw()
 {
   clearDisplay();
 
-  // Desenha a comida (sempre como pixel único)
+  // Draw food
   drawPixel(food.row, food.col);
 
   for (int i = 0; i < snakeLength;)
@@ -81,7 +81,6 @@ void SnakeGame::draw()
     int start = i;
     int row = snake[i].row;
 
-    // Verifica se os próximos pontos estão na mesma linha (horizontal)
     while (i + 1 < snakeLength && snake[i + 1].row == row)
     {
       i++;
@@ -89,14 +88,12 @@ void SnakeGame::draw()
 
     if (i > start)
     {
-      // Está em linha horizontal: monta o valor para fillRow
       uint8_t val = 0x00;
       for (int j = start; j <= i; j++)
       {
         val |= (1 << snake[j].col);
       }
 
-      // Garante que a comida não desapareça da linha
       if (food.row == row)
       {
         val |= (1 << food.col);
@@ -171,4 +168,5 @@ bool SnakeGame::checkCollision(Point head)
     }
 
     return false;
+
 }
