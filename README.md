@@ -194,13 +194,6 @@ Future improvements may include:
 
 ---
 
-## Author
-
-**Paulo H. Langone Miranda**  
-Industrial Electronics – SENAI Anchieta
-
----
-
 ## License
 
 MIT
